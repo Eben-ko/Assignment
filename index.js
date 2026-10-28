@@ -74,7 +74,7 @@ index.delete('/delete/:id', (req, res) => {
     const studentIndex = students.findIndex(s => s.id === parseInt(id));
 
     if (!studentIndex === -1) {
-        res.status(401).json('student not found');
+        return res.status(401).json('student not found');
     };
 
     const deletedStudent = students.splice(studentIndex, 1);
